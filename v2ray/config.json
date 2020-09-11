@@ -1,25 +1,25 @@
 {
-  "inbounds": [
-    {
-      "port": 8080,
-      "protocol": "vmess",
-      "settings": {
-        "clients": [
-          {
-            "id": "User-Settings",
-            "alterId": 0
-          }
-        ]
-      },
-      "streamSettings": {
-        "network":"ws",
-        "security": "none",
-        "wsSettings": {
+	"inbounds": [
+		{
+			"port": 8080,
+			"protocol": "vmess",
+			"settings": {
+				"clients": [
+					{
+						"id": "User-Settings",
+						"alterId": 0
+					}
+				]
+			},
+			"streamSettings": {
+				"network": "ws",
+				"security": "none",
+				"wsSettings": {
 					"path": "User-Settings"
 				}
-      }
-    }
-  ],
+			}
+		}
+	],
 	"outbounds": [
 		{
 			"protocol": "freedom",
@@ -44,4 +44,3 @@
 		]
 	}
 }
-
