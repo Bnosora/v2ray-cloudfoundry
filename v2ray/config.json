@@ -6,20 +6,42 @@
       "settings": {
         "clients": [
           {
-            "id": "8c35bef3-d51f-41ab-ac87-7b053410495b",
-            "alterId": 64
+            "id": "User-Settings",
+            "alterId": 0
           }
         ]
       },
       "streamSettings": {
-        "network":"ws"
+        "network":"ws",
+        "security": "none",
+        "wsSettings": {
+					"path": "User-Settings"
+				}
       }
     }
   ],
-  "outbounds": [
-    {
-      "protocol": "freedom",
-      "settings": {}
-    }
-  ]
+	"outbounds": [
+		{
+			"protocol": "freedom",
+			"settings": {}
+		},
+		{
+			"protocol": "blackhole",
+			"settings": {},
+			"tag": "block"
+		}
+	],
+	"routing": {
+		"domainStrategy": "AsIs",
+		"rules": [
+			{
+				"type": "field",
+				"outboundTag": "block",
+				"protocol": [
+					"bittorrent"
+				]
+			}
+		]
+	}
 }
+
